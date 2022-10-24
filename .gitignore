@@ -1,0 +1,14 @@
+Food Delivery App/deliveroo-clone/node_modules/
+Food Delivery App/deliveroo-clone/.expo/
+Food Delivery App/deliveroo-clone/dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+Food Delivery App/deliveroo-clone/web-build/
+
+# macOS
+.DS_Store
