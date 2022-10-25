@@ -1,3 +1,4 @@
+# Food Delivery App
 Food Delivery App/deliveroo-clone/node_modules/
 Food Delivery App/deliveroo-clone/.expo/
 Food Delivery App/deliveroo-clone/dist/
@@ -9,6 +10,19 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 Food Delivery App/deliveroo-clone/web-build/
+
+# WhatsApp
+WhatsApp/node_modules/
+WhatsApp/.expo/
+WhatsApp/dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+WhatsApp/web-build/
 
 # macOS
 .DS_Store
