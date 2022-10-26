@@ -1,18 +1,33 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const InputBox = () => {
+  const [newMessage, setNewMessage] = useState("");
+
+  const onSend = () => {
+    console.warn("Sending a new message: ", newMessage);
+    setNewMessage('');
+  };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={['bottom']} style={styles.container}>
       {/* Icon */}
       <AntDesign name="plus" size={20} color="royalblue" />
 
       {/* Text Input */}
-      <TextInput style={styles.input} placeholder="Type your message..." />
+      <TextInput value={newMessage} onChangeText={setNewMessage} style={styles.input} placeholder="Type your message..." />
 
       {/* Icon */}
-      <MaterialIcons style={styles.send} name="send" size={16} color="white" />
-    </View>
+      <MaterialIcons
+        onPress={onSend}
+        style={styles.send}
+        name="send"
+        size={16}
+        color="white"
+      />
+    </SafeAreaView>
   );
 };
 
@@ -22,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: "whitesmoke",
     padding: 5,
     paddingHorizontal: 10,
-    alignItems: 'center'
+    alignItems: "center",
   },
   input: {
     flex: 1,
@@ -36,10 +51,10 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
   },
   send: {
-    backgroundColor: 'royalblue',
+    backgroundColor: "royalblue",
     padding: 7,
     borderRadius: 15,
-    overflow: 'hidden'
+    overflow: "hidden",
   },
 });
 
