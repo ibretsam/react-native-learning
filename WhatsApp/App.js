@@ -22,16 +22,13 @@ function App() {
       const authUser = await Auth.currentAuthenticatedUser({
         bypassCache: true,
       });
-      console.log(authUser);
 
       // Query the database using Auth user id (sub)
       const userData = await API.graphql(
         graphqlOperation(getUser, { id: authUser.attributes.sub })
       );
-      console.log(userData);
 
       if (userData.data.getUser) {
-        console.log("User already exists in DB");
         return;
       }
 
